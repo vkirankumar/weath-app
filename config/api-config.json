@@ -1,0 +1,19 @@
+[{
+    "type": "WeatherApi",
+    "key": "260bad4619044145bf830607222409",
+    "endpoint": "http://api.weatherapi.com/v1/",
+    "methods": {
+        "current": {
+            "method": "current.json",
+            "params": ["key", "q", "aqi"]
+        },
+        "forecast": {
+            "method": "forecast.json",
+            "params": ["key", "q", "aqi", "alerts"]
+        },
+        "search": {
+            "method": "search.json",
+            "params": ["key", "q"]
+        }
+    }
+}]

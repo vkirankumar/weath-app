@@ -1,0 +1,48 @@
+.weather-display-row {
+    display: flex;
+    text-align: left;
+    height: 2.9em;
+    border-bottom: solid 1px #cdcdcd;
+    align-items: center;
+    font-size: small;
+}
+
+.weather-display-cell {
+    width: 7em;
+}
+
+.weather-display-cell-image {
+    display: flex;
+    align-items: center;
+    width: 14em;
+}
+
+.weather-display-cell-temp {
+    display: flex;
+    align-items: center;
+    width: 3em;
+    margin-left: 1em;
+}
+
+.weather-display-filter {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1em;
+    font-size: small;
+}
+
+.MuiFormControlLabel-label {
+    font-size: x-small !important;
+}
+
+.temp-display-text {
+    width: 6.5em;
+}
+
+.sort-header-text {
+    color: #FFF !important;
+}
+
+.sort-header-font {
+    font-size: small !important;
+}

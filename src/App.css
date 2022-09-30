@@ -1,0 +1,83 @@
+#root {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.root-container {
+  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.root-light {
+  color: #000;
+  background: rgb(235, 235, 235);
+}
+
+.root-dark{
+  background: rgb(75, 75, 75);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em;
+  background-color: rgb(31, 31, 31);
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.title-text {
+  font-family: 'Hanalei Fill', cursive;
+  font-size: 2.5em;
+  white-space: nowrap;
+}
+
+.title-text-light {
+  color: orange;
+}
+
+.title-text-dark {
+  color: Green;
+}
+
+.title-container {
+  display: flex;
+  margin-right: 2em;
+  flex: 1;
+}
+
+.help-container {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: white;
+  border-radius: 0.7em;
+  padding: 0 0.7em 0 0.7em;
+  align-items: center;
+}
+
+.widget-container {
+  overflow: auto;
+  padding: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
