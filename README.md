@@ -13,6 +13,11 @@ are saved for continuity when you visit the next time.
 
 The data shown are backed by open source web apis powered by weather api.
 
+The open source weather apis are configurable at the backend config file ./config/api-config.json.
+
+The application is containerized and can be orchestrated by any kubernetes platform 
+with relevant deployment and service configs provided.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -28,6 +33,26 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.
+
+### `npm run doc-build`
+
+Build docker image with node v17 platform exposing both frontend and backend ports.
+
+### `npm run docRun`
+
+To run the docker image built with the previous step.
+
+NOTE: Prerequisite to have docker installed prior to running the command.
+
+### `npm run sonar`
+
+To run SONAR Qube static code analyzer.
+
+NOTE: Prerequisite to have sonarqube setup locally or remote, prior to running the command.
+
+### `npm run cover`
+
+To run the tests in non watch mode and code coverage.
 
 ### `npm run build`
 
