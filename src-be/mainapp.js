@@ -1,12 +1,14 @@
-const express = require("express");
-const cors = require("cors");
-const router = require("./router/router");
-const bodyParser = require("body-parser");
+import express from "express";
+import cors from "cors";
+import router from "./router/router.js";
+import pkg from "body-parser";
+
 const PORT = 5001;
+const { json, urlencoded } = pkg;
 
-const http = require("http");
+import { createServer as _createServer } from "http";
 
-module.exports = start = () => {
+export const start = () => {
     const app = getExpressApp(); 
     configueMiddleWare(app);
     configureRoutes(app);
@@ -16,8 +18,8 @@ module.exports = start = () => {
 const getExpressApp = () => {
     const app = express();
     app.use(cors({ credentials: true, origin: true }));
-    app.use(bodyParser.json({limit: "30mb", extended: true}));
-    app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
+    app.use(json({limit: "30mb", extended: true}));
+    app.use(urlencoded({limit: "30mb", extended: true}));
     return app;
 }
 
@@ -30,6 +32,6 @@ const configureRoutes = (app) => {
 }
 
 const createServer = (app) => {
-    http.createServer(app).listen(PORT);
+    _createServer(app).listen(PORT);
     console.log(`Server listening on PORT = ${PORT}`);
 }

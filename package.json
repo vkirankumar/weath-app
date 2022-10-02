@@ -2,6 +2,7 @@
   "name": "weth-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -36,7 +37,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cover": "npm run test -- --coverage --watchAll=false",
-    "sonar": "sonar-scanner.bat -D'sonar.projectKey=weath-app' -D'sonar.sources=.' -D'sonar.host.url=http://localhost:9000' -D'sonar.login=sqp_26caa1407664de0fefcb9f9ef9a0ea59c0e03ac5'"
+    "sonar": "sonar-scanner.bat -D'sonar.projectKey=weath-app' -D'sonar.sources=.' -D'sonar.host.url=http://localhost:9000' -D'sonar.login=sqp_26caa1407664de0fefcb9f9ef9a0ea59c0e03ac5' -D'sonar.exlusions=**/src-be'",
+    "doc-build": "docker build -t weath-app .",
+    "doc-compose": "docker-compose -f docker-compose.yml up",
+    "docRun": "docker run -d -p 8080:5000 -p 8081:5001  weath-app"
   },
   "eslintConfig": {
     "extends": [

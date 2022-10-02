@@ -1,8 +1,7 @@
-const express = require("express");
+import { Router } from "express";
+import { configHandler } from "../handler/confighandler.js";
 
-const configHandler = require("../handler/configHandler");
-
-const router = express.Router();
+const router = Router();
 router.get("/getconfig", configHandler);
 
-module.exports = router;
+export default router;

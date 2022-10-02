@@ -1,8 +1,6 @@
-const fs = require('fs');
+import * as fs from 'fs';
 
-const configHandler = (req, res) => {
+export const configHandler = (_req, res) => {
     const configData = JSON.parse(fs.readFileSync('./config/api-config.json'));
     res.send(configData);
 }
-
-module.exports = configHandler;

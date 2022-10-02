@@ -1,3 +1,3 @@
-const start = require("./mainapp");
+import { start } from "./mainapp.js";
 
 start();

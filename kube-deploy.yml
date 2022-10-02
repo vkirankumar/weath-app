@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weath-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weath-app
+  template:
+    metadata:
+      labels:
+        app: weath-app
+    spec:
+      containers:
+      - name: weath-app
+        image: weath-app
+        imagePullPolicy: IfNotPresent
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # ports:
+        # - containerPort: <Port>

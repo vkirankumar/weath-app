@@ -50,7 +50,7 @@ export const getData = (dataSourceType: DataSourceType, searchKey: string,
 }
 
 export const getConfig = async () => {
-    const url = "http://localhost:5001/weath-app/getconfig";
+    const url = "http://localhost:32201/weath-app/getconfig";
     try {
         const response: AxiosResponse = await axios(url);
         configs = response.data as DataSource[];

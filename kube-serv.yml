@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weath-app
+spec:
+  selector:
+    app: weath-app
+  type: NodePort
+  ports:
+  - name: frontend
+    port: 5000
+    targetPort: 5000
+    nodePort: 32200
+  - name: backend
+    port: 5001
+    targetPort: 5001
+    nodePort: 32201
