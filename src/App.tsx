@@ -42,11 +42,23 @@ const App = () => {
     setLocalStorage({theme, dataSourceType, locations: filteredLocations});
   }
 
-  const onChangeLocation = (event: SyntheticEvent, value: any) => {
+  const onChangeLocation = (_event: SyntheticEvent, value: any) => {
+    let filteredLocations = [];
+    const locExist = locations.find((location:Location) => {
+      return location.name === value.name;
+    });
+    if(locExist) {
+      filteredLocations = locations.filter((loc : Location) => {
+        return (locExist.name !== loc.name);
+      });
+    } else {
+      filteredLocations = [...locations];
+    }
+
     value && value.hasOwnProperty("name") ?
-      setLocations([{...value}, ...locations ]) :
+      setLocations([{...value}, ...filteredLocations ]) :
         setOptions([]);
-    setLocalStorage({theme, dataSourceType, locations: [{...value}, ...locations ]});
+    setLocalStorage({theme, dataSourceType, locations: [{...value}, ...filteredLocations ]});
   }
 
   const onTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -21,7 +21,16 @@ const Widget = (props: WidgetProps) => {
 
     useEffect(() => {
         getWeatherData();
+        // setIntervalTimeout();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // const setIntervalTimeout = () => {
+    //     setTimeout(() => {
+    //         getWeatherData();
+    //         setIntervalTimeout();
+    //     }, 5000);
+    // }
   
     const getWeatherData = (): void => {
       getData(appContext.dataSourceType, props.widgetLocation.name, ApiMethods.FORECAST)

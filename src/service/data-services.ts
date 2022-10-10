@@ -1,10 +1,10 @@
 import { ApiMethods, DataSource, DataSourceType } from "../common/types";
 import axios, { AxiosPromise, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from "axios";
 
-export let configs: DataSource[] = [];
-/*{
+export let configs: DataSource[] = [
+    /*{
     "type": "WeatherApi",
-    "key": "260bad4619044145bf830607222409",
+    "key": "95e51729e9e94f0781532711220910",
     "endpoint": "http://api.weatherapi.com/v1/",
     "methods": {
         "current": {
@@ -20,10 +20,11 @@ export let configs: DataSource[] = [];
             "params": ["key", "q"]
         }
     }
-}];*/
+}*/];
 
 const headers: AxiosRequestHeaders = {
     "Content-Type": "application/json",
+    // "Access-Control-Max-Age": 86400
 } 
 
 const requestConfig: AxiosRequestConfig = {

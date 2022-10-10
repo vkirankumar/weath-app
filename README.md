@@ -6,17 +6,16 @@ You can add multiple place weather as widgets.
 
 It supports toggles between light and dark mode.
 
-You can sort it based on the date and view weather readings in celsius and farenheit units.
+You can sort it based on the date and view weather readings in Celsius and Fahrenheit units.
 
-The user settings like theme (dark or light), widgets and its places
-are saved for continuity when you visit the next time.
+The user settings like theme (dark or light), widgets and its places are saved for continuity when you visit the next time.
 
-The data shown are backed by open source web apis powered by weather api.
+The data shown are backed by open-source web APIs powered by WeatherAPI.
 
-The open source weather apis are configurable at the backend config file ./config/api-config.json.
+The open-source weather apis are configurable at the backend config file ./config/api-config.json.
 
-The application is containerized and can be orchestrated by any kubernetes platform 
-with relevant deployment and service configs provided.
+The application is containerized and can be orchestrated by any Kubernetes platform with relevant deployment and service configs provided.
+
 
 ## Available Scripts
 

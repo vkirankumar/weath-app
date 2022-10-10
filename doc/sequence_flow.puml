@@ -1,0 +1,53 @@
+@startuml
+autonumber
+
+participant browser as "Browser/User"
+participant localStorage as "Browser Local Storage"
+participant backend as "Weath-App Backend"
+participant source as "Weather Source Server"
+
+browser -> backend: User requests weather source config file
+note over backend
+  Published Configuration File
+ { "type": "WeatherApi",
+  "key": "260bXXXXXXXXXX222XXXXXXX",
+  "endpoint": "http://api.weatherapi.com/v1/"
+  ..... }
+end note
+backend -> browser: <color red> FAILED: </color> Failed to retrieve configuration/ Backend unreachable
+browser -> browser: <color red> Terminates the flow
+backend -> browser: <color green> SUCCESS: </color> Returns the config json to read weather source configuration
+browser -> localStorage:Read local storage for saved user data
+note over localStorage
+[
+  {
+    "id": "d3e2c930-d4a6-4d80-84ec-5d3531efef21",
+    "country": "India",
+    "isCurrent": false,
+    "lat": 12.98,
+    "lon": 77.58,
+    "name": "Bangalore City",
+    "label": "Bangalore City",
+    "region": "Karnataka",
+    "time": null
+  },
+  {
+    "name": "Amsterdam",
+    "id": 1
+  }
+]
+end note
+localStorage -> browser: Returns user data, if found, in the above format else returns empty array
+browser -> browser: Renders the weather widget, reads the location data
+browser -> source: Fetch weather data for the location the widget represents
+note over source
+The source url is read from the config retrieved
+in step 4
+end note
+source -> browser: <color red>FAILED: </color> No matching location or server unable to take request.
+browser -> browser: The particular location weather widget shows an error
+source -> browser: <color green> SUCCESS: </color> Returns weather data as json for the browser to render
+browser -> localStorage: Periodically saves the user preferences like location and theme.
+browser -> source: Calls location api to fetch matching results for the location entered by the user
+source -> browser: <color green> SUCCESS: </color> Returns the matching location(s)
+@enduml
